@@ -1,0 +1,21 @@
+.media {
+    width: 300px;
+    display: inline-block;
+    margin: 1%;
+}
+
+.media img {
+    width: 300px;
+    height: 450px;
+}
+
+.media-body {
+    height: 250px;
+    max-height: 200px;
+    overflow-y: auto;
+    text-align: justify;
+}
+
+.media-body p h6 {
+    box-sizing: border-box;
+}

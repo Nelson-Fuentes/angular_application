@@ -1,0 +1,49 @@
+.vertical-nav {
+    min-width: 20%;
+    width: 20%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s;
+}
+
+#sidebar.active {
+    margin-left: -20%;
+}
+
+.bg-red {
+    background-color: rgb(227, 45, 35);
+}
+
+.bg-red-dark {
+    background-color: rgb(227, 35, 25);
+}
+
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -17rem;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+}
+
+.separator {
+    margin: 3rem 0;
+    border-bottom: 1px dashed #fff;
+}
+
+.text-uppercase {
+    letter-spacing: 0.1em;
+}
+
+.text-gray {
+    color: #aaa;
+}
+
+.active {
+    background-color: rgb(227, 70, 50);
+    font-weight: bolder;
+}

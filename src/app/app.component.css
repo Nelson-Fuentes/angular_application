@@ -1,0 +1,41 @@
+html {
+    height: 100%;
+}
+
+body {
+    background: #599fd9;
+    background: -webkit-linear-gradient(to right, #599fd9, #c2e59c);
+    background: linear-gradient(to right, #599fd9, #c2e59c);
+    overflow-x: hidden;
+    height: 100%;
+}
+
+.page-content {
+    width: 80%;
+    margin-left: 20%;
+    transition: all 0.4s;
+    height: 100vh;
+}
+
+#content.active {
+    width: 100%;
+    margin: 0;
+}
+
+.separator {
+    margin: 3rem 0;
+    border-bottom: 1px dashed #fff;
+}
+
+.text-uppercase {
+    letter-spacing: 0.1em;
+}
+
+.text-gray {
+    color: #aaa;
+}
+
+.search {
+    width: 80%;
+    margin-left: 20%;
+}

@@ -1,0 +1,25 @@
+.media {
+    width: 25%;
+    min-width: 250px;
+    box-sizing: border-box;
+    display: inline-block;
+    background: white;
+    border-radius: 2%;
+    border: 1px solid #a0a0a0;
+}
+
+.thumbnail {
+    width: 100%;
+}
+
+.profiles {
+    width: 90%;
+    align-self: center;
+    align-items: center;
+}
+
+.alert {
+    width: 25%;
+    margin-left: 50%;
+    position: fixed;
+}

@@ -1,0 +1,75 @@
+<div class="alert alert-success" role="alert" *ngIf="alert">
+    {{message}}
+</div>
+
+<div class="alert alert-danger" role="alert" *ngIf="error">
+    {{ message }}
+</div>
+
+<div class="profiles mx-auto">
+
+    <button class="btn btn-success mr-5 float-left" (click)="readPage(page-1)" *ngIf="btnPrev">Pagina Anterior</button>
+    <button class="btn btn-danger mr-5 float-right" (click)="readPage(page+1)" *ngIf="btnNext">Pagina Siguiente</button>
+    <br> <br> <br>
+    <div class="media m-3 p-4" *ngFor="let user of users; let indice=index" id="user_{{user.id}}">
+        <img src="{{ user.avatar }}" class="mr-10 thumbnail mx-auto" alt="Perfil de Usuario">
+        <div class="media-body ml-3">
+            <h5 class="mt-0">{{user.last_name}}, {{user.first_name}}</h5>
+            <a href="mailto: {{user.email}}" class="mt-0">{{user.email}}</a>
+            <button type="button" class="btn btn-primary mt-1" (click)="updateShow(user.id, indice)">Editar</button>
+            <button type="submit" class="btn btn-dark ml-2 mt-1" (click)="deleteUser(user.id, indice)">Eliminar</button>
+        </div>
+    </div>
+    <br>
+    <button type="button" class="btn btn-info btn-lg mb-5" (click)="addShow()">Agregar Usuario</button>
+
+    <form id="addUser" class="mb-5" *ngIf="add" (submit)="false">
+        <h3>Añadir Usuario</h3>
+        <div class="form-group">
+            <label for="InputApellido">Apellido</label>
+            <input type="text" class="form-control" id="InputApellido" name="add_last_name" required placeholder="Apellido" [(ngModel)]="new_User.last_name">
+        </div>
+
+        <div class="form-group">
+            <label for="InputNombre">Nombre</label>
+            <input type="text" class="form-control" id="InputNombre" required placeholder="Nombre" name="add_first_name" [(ngModel)]="new_User.first_name">
+        </div>
+
+        <div class="form-group">
+            <label for="exampleInputEmail1">Direccion de Correo</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" required aria-describedby="emailHelp" placeholder="Ingrese Correo" name="add_email" [(ngModel)]="new_User.email">
+        </div>
+
+        <div class="form-group">
+            <label for="Imagen">Imagen</label>
+            <input type="text" class="form-control" id="Imagen" required aria-describedby="emailHelp" placeholder="Enlace de Imagen" name="add_image" [(ngModel)]="new_User.avatar">
+        </div>
+        <button type="submit" class="btn btn-primary ml-2" (click)="addUser()">Guardar</button>
+        <button type="submit" class="btn btn-dark ml-2" (click)="add=false">Cancelar</button>
+    </form>
+
+    <form id="editUser" class="mb-5" *ngIf="edit" (submit)="false">
+        <h3>Editar Usuario</h3>
+        <div class="form-group">
+            <label for="InputApellido">Apellido</label>
+            <input type="text" class="form-control" id="InputApellido" name="edit_last_name" required placeholder="Apellido" [(ngModel)]="edit_User.last_name">
+        </div>
+
+        <div class="form-group">
+            <label for="InputNombre">Nombre</label>
+            <input type="text" class="form-control" id="InputNombre" required placeholder="Nombre" name="edit_first_name" [(ngModel)]="edit_User.first_name">
+        </div>
+
+        <div class="form-group">
+            <label for="exampleInputEmail1">Direccion de Correo</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" required aria-describedby="emailHelp" placeholder="Ingrese Correo" name="edit_email" [(ngModel)]="edit_User.email">
+        </div>
+
+        <div class="form-group">
+            <label for="Imagen">Imagen</label>
+            <input type="text" class="form-control" id="Imagen" required aria-describedby="emailHelp" placeholder="Enlace de Imagen" name="edit_iamge" [(ngModel)]="edit_User.avatar">
+        </div>
+        <button type="submit" class="btn btn-primary ml-2" (click)="update()">Editar</button>
+        <button type="submit" class="btn btn-dark ml-2" (click)="exitEdit()">Cancelar</button>
+    </form>
+</div>
